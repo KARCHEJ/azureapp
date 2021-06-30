@@ -7,7 +7,7 @@ import json
 app = Flask(__name__)
 
 @app.route("/",methods = ['POST', 'GET'])
-#@app.after_request
+# @app.after_request
 def handleRequest():
     req_data = request.get_json()
     head = (os.environ["apim_token"])
