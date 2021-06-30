@@ -14,5 +14,5 @@ def handleRequest():
     url = (os.environ["apim_url"])
     botResponse = Response(status = 200)
     headers = {"Ocp-Apim-Subscription-Key" : head, "Content-Type" : "application/json" }
-    postResponse = requests.post(url,data = json.dumps(req_data), headers = headers)
+    postResponse = requests.post(url, data = json.dumps(req_data), headers = headers)
     return botResponse
