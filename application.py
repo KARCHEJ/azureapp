@@ -10,7 +10,9 @@ app = Flask(__name__)
 def hello():
     req_data = request.get_json()
     head = (os.environ["test"])
+    url = (os.environ["apim_url"])
     response = Response()
     response.headers["Ocp-Apim-Subscription-Key"] = head
     response.data = json.dumps(req_data)
+    postResponse = request.post(url,data = response.data,header = response.headers)
     return response
